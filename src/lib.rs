@@ -98,6 +98,8 @@
 //!
 //! `min_partial!` and `max_partial` uses the `min` and `max` functions from the [`partial-min-max` crate](https://crates.io/crates/partial-min-max).
 //!
+//!
+//! ## Can I use this without std?
 //! To enable support for `no_std`, disable the default features for the crate in your `Cargo.toml` file:
 //! ```toml
 //! [dependencies.min_max]
