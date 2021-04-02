@@ -97,6 +97,13 @@
 //! and so on. `min!` works similarly, but with `std::cmp::min`.
 //!
 //! `min_partial!` and `max_partial` uses the `min` and `max` functions from the [`partial-min-max` crate](https://crates.io/crates/partial-min-max).
+//!
+//! To enable support for `no_std`, disable the default features for the crate in your `Cargo.toml` file:
+//! ```toml
+//! [dependencies.min_max]
+//! version = "^0.2"
+//! default-features = false
+//! ```
 
 #![cfg_attr(not(feature = "std"), no_std)]
 
