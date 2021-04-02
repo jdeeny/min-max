@@ -11,3 +11,7 @@ description = "max! and min! macros"
 
 [dependencies]
 partial-min-max = "0.4.0"
+
+[features]
+default = ["std"]
+std = []

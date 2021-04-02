@@ -98,6 +98,13 @@
 //!
 //! `min_partial!` and `max_partial` uses the `min` and `max` functions from the [`partial-min-max` crate](https://crates.io/crates/partial-min-max).
 
+#![cfg_attr(not(feature = "std"), no_std)]
+
+#[cfg(feature = "std")]
+pub use std::cmp;
+#[cfg(not(feature = "std"))]
+pub use core::cmp;
+
 pub use partial_min_max::{max, min};
 
 /// Returns the maximum element of the arguments.
@@ -105,7 +112,7 @@ pub use partial_min_max::{max, min};
 macro_rules! max {
     ($x:expr) => ( $x );
     ($x:expr, $($xs:expr),+) => {
-        std::cmp::max($x, max!( $($xs),+ ))
+        min_max::cmp::max($x, max!( $($xs),+ ))
     };
 }
 
@@ -114,7 +121,7 @@ macro_rules! max {
 macro_rules! min {
     ($x:expr) => ( $x );
     ($x:expr, $($xs:expr),+) => {
-        std::cmp::min($x, min!( $($xs),+ ))
+        min_max::cmp::min($x, min!( $($xs),+ ))
     };
 }
 
