@@ -90,7 +90,8 @@
 //! Well, `max!(x1, x2, x3)` expands to:
 //!
 //! ```rust
-//! std::cmp::max(x1, std::cmp::max(x2, std::cmp::max(x3)))
+//! let (x1, x2, x3, x4) = (10, 20, 30, 5);
+//! std::cmp::max(x1, std::cmp::max(x2, std::cmp::max(x3, x4)));
 //! ```
 //!
 //! and so on. `min!` works similarly, but with `std::cmp::min`.
